@@ -73,7 +73,7 @@ pokemon %>%
                 Count_Categorical = sum(. == "_____"))
     ```
 
-3.  Visualize the distribution of Pokemon's statuses (attack ,defense, sp_attack, sp_defense, speed and weight_kg) by type1 of Pokemon? What can you conclude?
+3.  Visualize the distribution of Pokemon's statuses (attack ,defense, sp_attack, sp_defense, speed, weight_kg, hp and height_m) by type1 of Pokemon? What can you conclude?
 
 ```{r}
 # Subset the dataset with the desired columns
@@ -155,7 +155,7 @@ t.test(_______________________,
 
 ## Cleaning data
 
-We want to develop a machine learning model to predict the Pokemon type based on their statuses. Select only the "type1", "attack" ,"defense", "sp_attack", "sp_defense", "speed" and "weight_kg" columns from the table. Remove any NAs present in the data using na.omit. Convert the type1 column to factor type.
+We want to develop a machine learning model to predict the Pokemon type based on their statuses. Select only the "type1", "attack" ,"defense", "sp_attack", "sp_defense", "speed" "weight_kg", "hp" and "height_m" columns from the table. Remove any NAs present in the data using na.omit. Convert the type1 column to factor type.
 
 ```{r}
 # define which caharacteristics you want to include in your modeling
@@ -222,7 +222,7 @@ pokeTest$grp <- NULL
 
 For the development of the model you will use random forest. Caret package within function train has implemented random forest as a part of another package called ***ranger***. Ranger contains much faster implementation of random forest model that is why we are going to use this one.
 
-1.  We will use random forest with 10 fold cross-validation approach which you need to define with function trainControl. Inside function *train* from caret package set the method argument to *ranger*, number of trees to 100 and importance to "permutation".
+1.  We will use random forest with 5 fold cross-validation approach which you need to define with function trainControl. Inside function *train* from caret package set the method argument to *ranger*, number of trees to 100 and importance to "permutation".
 
 ```{r}
 # defining the cross-validation parameters

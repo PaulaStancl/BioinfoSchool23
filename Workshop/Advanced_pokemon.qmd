@@ -37,7 +37,7 @@ Perform an exploratory analysis of the dataset. Answer the following questions:
 
 2.  How many numerical and how many categorical features you have in your data? Are all the numerical features continuous features? Explain.
 
-3.  Visualize the distribution of Pokemon's statuses (attack ,defense, sp_attack, sp_defense, speed and weight_kg) by type1 of Pokemon? What can you conclude?
+3.  Visualize the distribution of Pokemon's statuses (attack ,defense, sp_attack, sp_defense, speed, weight_kg, hp and height_m) by type1 of Pokemon? What can you conclude?
 
 4.  How correlated are the Pokemon's statuses? Which status features are highly correlated?
 
@@ -53,7 +53,7 @@ Perform an exploratory analysis of the dataset. Answer the following questions:
 
 ## Cleaning data
 
-We want to develop a machine learning model to predict the Pokemon type based on their statuses. Select only the "type1", "attack" ,"defense", "sp_attack", "sp_defense", "speed" and "weight_kg" columns from the table. Remove any NAs present in the data. Convert the type1 column to factor type.
+We want to develop a machine learning model to predict the Pokemon type based on their statuses. Select only the "type1", "attack" ,"defense", "sp_attack", "sp_defense", "speed" "weight_kg", "hp" and "height_m" columns from the table. Remove any NAs present in the data. Convert the type1 column to factor type.
 
 The first step in developing a model is to split the data into training and test set. Training set usually contains about 70-80 percent of data while test set contains 30-20 percent of the data. One of the most used R packages for statistical modeling is ***caret***. Install the package if you already do not have it.
 
@@ -69,7 +69,7 @@ Your answer: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\
 
 For the development of the model you will use random forest. Caret package within function train has implemented random forest as a part of another package called ***ranger***. Ranger contains much faster implementation of random forest model that is why we are going to use this one.
 
-1.  We will use random forest with 10 fold cross-validation approach which you need to define with function trainControl. Inside function *train* from caret package set the method argument to *ranger*, number of trees to 100.
+1.  We will use random forest with 5 fold cross-validation approach which you need to define with function trainControl. Inside function *train* from caret package set the method argument to *ranger*, number of trees to 100.
 
 2.  Use function varImp to determine which variables are most important for your model.
 
